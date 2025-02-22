@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 app = FastAPI()
-DATABASE_URL = os.getenv("mysql://root:tPwHPhngyXOXmITlWbfhqlPiCKkzFavn@gondola.proxy.rlwy.net:57641/railway")
+DATABASE_URL = os.getenv("mysql://root:tPwHPhngyXOXmITlWbfhqlPiCKkzFavn@mysql.railway.internal:3306/railway")
 # Enable CORS
 app.add_middleware(
     CORSMiddleware,
