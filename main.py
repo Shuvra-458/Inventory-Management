@@ -97,6 +97,10 @@ def login(login: Login):
         cursor.close()
         connection.close()
 
+@app.get("/")  # ✅ This fixes the "Not Found" error
+def home():
+    return {"message": "Backend is running on Railway with MySQL!"}
+    
 @app.post("/api/add_product")
 def add_product(product: AddProduct):
     connection = connect_database()
