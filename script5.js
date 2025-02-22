@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const suppliersTable = document.getElementById('suppliersTable').getElementsByTagName('tbody')[0];
 
-    fetch('http://127.0.0.1:8000/api/suppliers')
+    fetch('inventory-management-production-a492.up.railway.app/api/suppliers')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
