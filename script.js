@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const displayInventory = document.getElementById('inventoryTable').getElementsByTagName('tbody')[0];
     if (inventoryTable) {
-        fetch('http://127.0.0.1:8000/api/inventory')
+        fetch('inventory-management-production-a492.up.railway.app/api/inventory')
             .then(response => response.json())
             .then(data => {
                 data.forEach(item => {
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const quantity = document.getElementById('quantity').value;
         const sellingPrice = document.getElementById('sellingPrice').value;
 
-        fetch('http://127.0.0.1:8000/api/sell_product', {
+        fetch('inventory-management-production-a492.up.railway.app/api/sell_product', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const productName = document.getElementById('productName').value;
             const productID = document.getElementById('productID').value;
 
-            fetch('http://127.0.0.1:8000/api/clearInventory', {
+            fetch('inventory-management-production-a492.up.railway.app/api/clearInventory', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const salesReportTable = document.getElementById('salesReportTable').getElementsByTagName('tbody')[0];
     if (salesReportTable) {
-       fetch('http://127.0.0.1:8000/api/sales_report')
+       fetch('inventory-management-production-a492.up.railway.app/api/sales_report')
             .then(response => response.json())
             .then(data => {
                  data.forEach(item => {
@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const displaySuppliers = document.getElementById('supplierContent');
     if (displaySuppliers) {
-        fetch('http://127.0.0.1:8000/api/suppliers')
+        fetch('inventory-management-production-a492.up.railway.app/api/suppliers')
             .then(response => response.json())
             .then(data => {
                 let table = '<table><tr><th>Supplier ID</th><th>Name</th><th>Contact Name</th><th>Contact Number</th><th>Email</th><th>Address</th></tr>';
@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const productName = document.getElementById('productName').value;
 
-            fetch('http://127.0.0.1:8000/api/searchProduct', {
+            fetch('inventory-management-production-a492.up.railway.app/api/searchProduct', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
