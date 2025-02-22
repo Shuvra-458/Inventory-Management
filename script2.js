@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     const salesReportTable = table.getElementsByTagName('tbody')[0];
 
-    fetch('http://127.0.0.1:8000/api/sales_report')
+    fetch('inventory-management-production-a492.up.railway.app/api/sales_report')
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
