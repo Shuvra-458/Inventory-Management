@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const quantity = document.getElementById('quantitySold').value;
         const sellingPrice = document.getElementById('sellingPrice').value;
 
-        fetch('http://127.0.0.1:8000/api/sell_product', {
+        fetch('inventory-management-production-a492.up.railway.app/api/sell_product', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
