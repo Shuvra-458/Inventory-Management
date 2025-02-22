@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const address = document.getElementById('address').value;
 
         try {
-            const response = await fetch('http://127.0.0.1:8000/api/add_product', {
+            const response = await fetch('inventory-management-production-a492.up.railway.app/api/add_product', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
