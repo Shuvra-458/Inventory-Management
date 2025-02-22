@@ -4,8 +4,11 @@ from fastapi.middleware.cors import CORSMiddleware
 import mysql.connector
 from mysql.connector import Error
 from typing import List
+from dotenv import load_dotenv
 
+load_dotenv()
 app = FastAPI()
+DATABASE_URL = os.getenv("mysql://root:tPwHPhngyXOXmITlWbfhqlPiCKkzFavn@gondola.proxy.rlwy.net:57641/railway")
 # Enable CORS
 app.add_middleware(
     CORSMiddleware,
@@ -17,18 +20,13 @@ app.add_middleware(
 
 # Database connection
 def connect_database():
-    try:
-        connection = mysql.connector.connect(
-            host='127.0.0.1',
-            database='Inventory',
-            user='root',
-            password='shuvra'
-        )
-        if connection.is_connected():
-            return connection
-    except Error as e:
-        print(f"Error: {e}")
-        raise HTTPException(status_code=500, detail="Database connection failed")
+    return mysql.connector.connect(
+        host=DATABASE_URL.split('@')[1].split('/')[0],  # Extracts host
+        user=DATABASE_URL.split('//')[1].split(':')[0],  # Extracts username
+        password=DATABASE_URL.split(':')[2].split('@')[0],  # Extracts password
+        database=DATABASE_URL.split('/')[-1],  # Extracts database name
+    )
+
 
 # Pydantic models
 class Login(BaseModel):
