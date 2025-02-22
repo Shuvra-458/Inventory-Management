@@ -1,51 +1,45 @@
-# Inventory Management System
+# 🚀 Inventory Management System
 
-This is an Inventory Management System built using C++ and MySQL. It allows users to manage products, suppliers, and inventory, and generate sales reports.
+A fully functional **Inventory Management System** built with **HTML, CSS, JavaScript, FastAPI, and MySQL**. This web application allows users to **add, update, search, and manage inventory data** efficiently.
 
-## Features
+=
+---
 
-- Add new products and update inventory
-- Display inventory details
-- Generate sales reports
-- Sell products
-- Clear inventory by product name and product ID
-- Display supplier details
-- Search for products by name
+## 🌍 Live Demo  
+[![Website](https://img.shields.io/badge/Live%20Demo-Click%20Here-blue)]([https://your-project.vercel.app](https://inventorymanager-p4xdaaeo1-shuvras-projects.vercel.app/))  
+🔗 **URL:** [https://your-project.vercel.app]([https://your-project.vercel.app](https://inventorymanager-p4xdaaeo1-shuvras-projects.vercel.app/)) *(Replace with actual Vercel link)*  
 
-## Prerequisites
+---
 
-- MySQL Server
-- MySQL Connector/C++
-- FastCGI
-- JSON for Modern C++
+## 📌 Features
+✅ **Add, Update, and Delete Products**  
+✅ **Search and Filter Inventory**  
+✅ **Sales Report Generation**  
+✅ **Supplier Details Management**  
+✅ **Fully Responsive UI**  
+✅ **Dark Mode Support** 🌙  
 
-## Installation
+---
 
-### Windows
+## ⚡ Tech Stack
+- **Frontend:** HTML, CSS, JavaScript  
+- **Backend:** FastAPI (Python)  
+- **Database:** MySQL  
+- **Deployment:** Vercel (Frontend), Railway/Render (Backend)  
 
-1. **Install MySQL Server**:
-   - Download and install MySQL Server from [MySQL Downloads](https://dev.mysql.com/downloads/installer/).
+---
 
-2. **Install MySQL Connector/C++**:
-   - Download and install MySQL Connector/C++ from [MySQL Connector/C++ Downloads](https://dev.mysql.com/downloads/connector/cpp/).
+## 🚀 Deployment
+### **Frontend (Vercel)**
+Deployed using [Vercel](https://vercel.com/). Visit the live demo [here]([https://your-project.vercel.app](https://inventorymanager-p4xdaaeo1-shuvras-projects.vercel.app/)).
 
-3. **Install FastCGI**:
-   - Download the FastCGI source code from the [FastCGI GitHub repository](https://github.com/FastCGI-Archives/fcgi2).
-   - Extract the source code and build it using the Developer Command Prompt for Visual Studio:
+### **Backend (FastAPI + MySQL)**
+Hosted using **Railway/Render**. Ensure your `.env` contains the correct database credentials.
 
-4. **Install JSON for Modern C++**:
-   - Download the JSON for Modern C++ library from [JSON for Modern C++ GitHub repository](https://github.com/nlohmann/json).
-   - Follow the installation instructions provided in the repository.
+---
 
-### Linux
-
-1. **Install MySQL Server**:
-   - Install MySQL Server using your package manager. For example, on Ubuntu:
-
-
-2. **Install MySQL Connector/C++**:
-   - Install MySQL Connector/C++ using your package manager. For example, on Ubuntu:
-
-3. **Run the program**:
-   - Run the compiled program:
-     
+## 🛠️ Installation & Setup
+### **1️⃣ Clone the Repository**
+```bash
+git clone https://github.com/your-username/your-repo.git
+cd your-repo
