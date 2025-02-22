@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clear Inventory</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Clear Inventory</h1>
+        <div class="buttons">
+            <a href="add_product.html"><button class="btn">Add Product</button></a>
+            <a href="display_inventory.html"><button class="btn">Display Inventory</button></a>
+            <a href="generate_report.html"><button class="btn">Generate Sales Report</button></a>
+            <a href="sell_product.html"><button class="btn">Sell Product</button></a>
+            <a href="clear_inventory.html"><button class="btn">Clear Inventory</button></a>
+            <a href="display_suppliers.html"><button class="btn">Display Supplier Details</button></a>
+            <a href="search_product.html"><button class="btn">Search Product</button></a>
+        </div>
+        <form id="clearInventoryForm">
+            <label for="productID">Product ID:</label>
+            <input type="number" id="productID" name="productID" required>
+            <label for="productName">Product Name:</label>
+            <input type="text" id="productName" name="productName" required>
+            <button type="submit" class="btn">Clear Inventory</button>
+        </form>
+        <div id="responseMessage"></div>
+    </div>
+    <script src="script3.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,223 @@
+/* 🌍 Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #eef2f7;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* 🎯 Main Container */
+.container {
+    max-width: 95%;
+    width: 900px;
+    text-align: center;
+    margin: 50px auto;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* 📌 Responsive Headings */
+h1 {
+    color: #222;
+    font-size: 26px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* 🎯 Buttons Section */
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 12px 20px;
+    background: linear-gradient(to right, #007bff, #0056b3);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 12px rgba(0, 123, 255, 0.3);
+}
+
+/* 📌 Responsive Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+form input, form select {
+    width: 90%;
+    max-width: 500px;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+form input:focus, form select:focus {
+    border: 2px solid #007bff;
+}
+
+form button {
+    padding: 12px 25px;
+    background: linear-gradient(to right, #28a745, #218838);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+form button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 12px rgba(40, 167, 69, 0.3);
+}
+
+/* 📌 Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background: linear-gradient(to right, #007bff, #0056b3);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+tr:hover {
+    background-color: #e2e6ea;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* 📌 Responsive Table for Smaller Screens */
+@media screen and (max-width: 768px) {
+    table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    th, td {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+/* 🌙 Dark Mode */
+.dark-mode {
+    background-color: #1c1c1c;
+    color: #ffffff;
+}
+
+.dark-mode table, .dark-mode th, .dark-mode td {
+    border-color: #444;
+}
+
+.dark-mode th {
+    background: linear-gradient(to right, #004085, #002752);
+}
+
+.dark-mode tr:nth-child(even) {
+    background-color: #2d2d2d;
+}
+
+.dark-mode tr:hover {
+    background-color: #383838;
+}
+
+.dark-mode form input, .dark-mode form select {
+    background-color: #2d2d2d;
+    color: white;
+    border-color: #555;
+}
+
+.dark-mode form input:focus, .dark-mode form select:focus {
+    border-color: #007bff;
+}
+
+/* 📌 Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* 📌 Full Mobile & Tablet Responsiveness */
+@media screen and (max-width: 1024px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    form input, form select {
+        width: 100%;
+    }
+
+    th, td {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .buttons {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+}

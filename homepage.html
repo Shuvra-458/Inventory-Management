@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Inventory Management System</h1>
+        <div class="buttons">
+            <a href="add_product.html"><button class="btn" id="addProductBtn">Add Product</button></a>
+            <a href="display_inventory.html"><button class="btn">Display Inventory</button></a>
+            <a href="generate_report.html"><button class="btn" id="generateReportBtn">Generate Sales Report</button></a>
+            <a href="sell_product.html"><button class="btn" id="sellProductBtn">Sell Product</button></a>
+            <a href="clear_inventory.html"><button class="btn" id="clearInventoryBtn">Clear Inventory</button></a>
+            <a href="display_suppliers.html"><button class="btn" id="displaySuppliersBtn">Display Supplier Details</button></a>
+            <a href="search_product.html"><button class="btn">Search Product</button></a>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const userRole = localStorage.getItem('userRole');
+
+            if (userRole !== 'admin' && userRole !== 'Admin') {
+                document.getElementById('addProductBtn').style.display = 'none';
+                document.getElementById('clearInventoryBtn').style.display = 'none';
+            }
+
+            if (userRole !== 'admin' && userRole !== 'Admin' && userRole !== 'manager' && userRole !== 'Manager') {
+                document.getElementById('generateReportBtn').style.display = 'none';
+                document.getElementById('displaySuppliersBtn').style.display = 'none';
+            }
+
+            if (userRole !== 'admin' && userRole !== 'Admin' && userRole !== 'manager' && userRole !== 'Manager' && userRole !== 'employee' && userRole !== 'Employee') {
+                document.getElementById('sellProductBtn').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
