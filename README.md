@@ -7,9 +7,6 @@ For Login, use the credentials: Username - admin Password - adminpass
 =
 ---
 
-## 🌍 Live Demo  
-[![Website](https://img.shields.io/badge/Live%20Demo-Click%20Here-blue)]([https://your-project.vercel.app](https://inventorymanager-p4xdaaeo1-shuvras-projects.vercel.app/))  
-🔗 **URL:** [https://your-project.vercel.app]([https://your-project.vercel.app](https://inventorymanager-p4xdaaeo1-shuvras-projects.vercel.app/)) *(Replace with actual Vercel link)*  
 
 ---
 
