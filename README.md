@@ -36,12 +36,12 @@ Username 3 - employee Password - employeepass
 Deployed using [Vercel](https://vercel.com/). Visit the live demo [here]([https://your-project.vercel.app](https://inventorymanager-p4xdaaeo1-shuvras-projects.vercel.app/)).
 
 ### **Backend (FastAPI + MySQL)**
-Hosted using **Railway/Render**. Ensure your `.env` contains the correct database credentials.
+Hosted using **Clever Cloud/Render**. Ensure your `.env` contains the correct database credentials.
 
 ---
 
 ## 🛠️ Installation & Setup
 ### **1️⃣ Clone the Repository**
 ```bash
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
+git clone https://github.com/your-username/Inventory-Management.git
+cd Inventory-Management
