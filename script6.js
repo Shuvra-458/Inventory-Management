@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const productName = document.getElementById('productName').value;
 
         try {
-            const response = await fetch('inventory-management-production-a492.up.railway.app/api/search_product', {
+            const response = await fetch('https://inventory-management-7wqt.onrender.com/api/search_product', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
