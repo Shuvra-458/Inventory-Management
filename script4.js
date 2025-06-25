@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const quantity = document.getElementById('quantitySold').value;
         const sellingPrice = document.getElementById('sellingPrice').value;
 
-        fetch('inventory-management-production-a492.up.railway.app/api/sell_product', {
+        fetch('https://inventory-management-7wqt.onrender.com/api/sell_product', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
