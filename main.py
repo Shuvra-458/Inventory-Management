@@ -28,6 +28,106 @@ def connect_database():
         database=DATABASE_URL.split('/')[-1],  # Extracts database name
     )
 
+def initialize_database():
+    connection = connect_database()
+    cursor = connection.cursor()
+
+    try:
+        # Users table
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS Users (
+                UserID INT AUTO_INCREMENT PRIMARY KEY,
+                username VARCHAR(255) UNIQUE NOT NULL,
+                password VARCHAR(255) NOT NULL,
+                role VARCHAR(50) NOT NULL
+            )
+        """)
+
+        # Categories table
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS Categories (
+                CategoryID INT AUTO_INCREMENT PRIMARY KEY,
+                CategoryName VARCHAR(255) UNIQUE NOT NULL
+            )
+        """)
+
+        # Suppliers table
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS Suppliers (
+                SupplierID INT AUTO_INCREMENT PRIMARY KEY,
+                Name VARCHAR(255) UNIQUE NOT NULL,
+                ContactName VARCHAR(255),
+                ContactNumber VARCHAR(50),
+                Email VARCHAR(255),
+                Address TEXT
+            )
+        """)
+
+        # Products table
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS Products (
+                ProductID INT AUTO_INCREMENT PRIMARY KEY,
+                Name VARCHAR(255) NOT NULL,
+                Description TEXT,
+                Price FLOAT NOT NULL,
+                CategoryID INT,
+                SupplierID INT,
+                ExpiryDate DATE,
+                FOREIGN KEY (CategoryID) REFERENCES Categories(CategoryID),
+                FOREIGN KEY (SupplierID) REFERENCES Suppliers(SupplierID)
+            )
+        """)
+
+        # Inventory table
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS Inventory (
+                ProductID INT PRIMARY KEY,
+                QuantityInStock INT NOT NULL,
+                LastUpdates TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
+            )
+        """)
+
+        # Purchases table
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS Purchases (
+                PurchaseID INT AUTO_INCREMENT PRIMARY KEY,
+                ProductID INT,
+                SupplierID INT,
+                Quantity INT NOT NULL,
+                CostPrice FLOAT NOT NULL,
+                PurchaseDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                FOREIGN KEY (ProductID) REFERENCES Products(ProductID),
+                FOREIGN KEY (SupplierID) REFERENCES Suppliers(SupplierID)
+            )
+        """)
+
+        # Sales table
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS Sales (
+                SaleID INT AUTO_INCREMENT PRIMARY KEY,
+                ProductID INT,
+                QuantitySold INT NOT NULL,
+                SellingPrice FLOAT NOT NULL,
+                SaleDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
+            )
+        """)
+
+        connection.commit()
+        print("✅ Tables created successfully (if not already existing).")
+
+    except Error as e:
+        print(f"Database Initialization Error: {e}")
+    finally:
+        cursor.close()
+        connection.close()
+
+# Initialize database on app startup
+@app.on_event("startup")
+def startup_event():
+    initialize_database()
+
 
 # Pydantic models
 class Login(BaseModel):
