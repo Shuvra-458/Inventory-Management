@@ -53,7 +53,7 @@ def initialize_database():
                 role VARCHAR(50) NOT NULL
             )
         """)
-        default users = [
+        default_users = [
             ('admin', 'adminpass', 'admin'),
             ('employee', 'employeepass', 'employee'),
             ('manager', 'managerpass', 'manager'),
