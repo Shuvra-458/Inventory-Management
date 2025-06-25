@@ -53,22 +53,21 @@ def initialize_database():
                 role VARCHAR(50) NOT NULL
             )
         """)
-        default_users = [
-    ('admin', 'adminpass', 'admin'),
-    ('employee', 'employeepass', 'employee'),
-    ('manager', 'managerpass', 'manager'),
-]
-
-for username, password, role in default_users:
-    cursor.execute("SELECT * FROM Users WHERE username = %s", (username,))
-    if cursor.fetchone() is None:
-        cursor.execute(
-            "INSERT INTO Users (username, password, role) VALUES (%s, %s, %s)",
-            (username, password, role)
-        )
-
-connection.commit()
-print("✅ Default users inserted (if they weren't already present).")
+        default users = [
+            ('admin', 'adminpass', 'admin'),
+            ('employee', 'employeepass', 'employee'),
+            ('manager', 'managerpass', 'manager'),
+        ]
+        for username, password, role in default_users:
+            cursor.execute("SELECT * FROM Users where username = %s", (username,))
+            if cursor.fetchone() is None:
+                cursor.execute(
+                    "INSERT INTO Users (username, password, role) VALUES (%s, %s. %s)",
+                    (username, password, role)
+                )
+            connection.commit()
+            print("✅ Default users inserted (if not already present).")
+       
 
         # Categories table
         cursor.execute("""
