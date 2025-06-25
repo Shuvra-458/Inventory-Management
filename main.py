@@ -19,14 +19,25 @@ app.add_middleware(
     allow_headers=["*"],  # Allows all headers
 )
 
+def parse_database_url():
+    url = DATABASE_URL.replace('mysql://', '')
+    user_pass, host_port_db = url.split('@')
+    username, password = user_pass.split(':')
+    host_port, db = host_port_db.split('/')
+    host, port = host_port.split(':')
+    return username, password, host, int(port), db
+    
 # Database connection
 def connect_database():
+    username, password, host, port, db = parse_database_url()
     return mysql.connector.connect(
-        host=DATABASE_URL.split('@')[1].split('/')[0],  # Extracts host
-        user=DATABASE_URL.split('//')[1].split(':')[0],  # Extracts username
-        password=DATABASE_URL.split(':')[2].split('@')[0],  # Extracts password
-        database=DATABASE_URL.split('/')[-1],  # Extracts database name
+        host=host,
+        user=username,
+        password=password,
+        database=db,
+        port=port
     )
+
 
 def initialize_database():
     connection = connect_database()
