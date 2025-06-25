@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     const salesReportTable = table.getElementsByTagName('tbody')[0];
 
-    fetch('inventory-management-production-a492.up.railway.app/api/sales_report')
+    fetch('https://inventory-management-7wqt.onrender.com/api/sales_report')
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
