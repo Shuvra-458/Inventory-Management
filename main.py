@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 app = FastAPI()
-DATABASE_URL = os.getenv("mysql://root:tPwHPhngyXOXmITlWbfhqlPiCKkzFavn@mysql.railway.internal:3306/railway")
+DATABASE_URL = os.getenv(mysql://uuvfhfduvugkyfqy:ANIXaawLix4awLSzaAH9@b0nhswd9r8ikagondpxn-mysql.services.clever-cloud.com:3306/b0nhswd9r8ikagondpxn)
 # Enable CORS
 app.add_middleware(
     CORSMiddleware,
