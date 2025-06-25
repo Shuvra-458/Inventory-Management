@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
 
-            fetch('inventory-management-production-a492.up.railway.app/api/login', {
+            fetch('https://inventory-management-7wqt.onrender.com/api/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
