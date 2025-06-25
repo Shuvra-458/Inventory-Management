@@ -27,7 +27,7 @@ Username 3 - employee Password - employeepass
 - **Frontend:** HTML, CSS, JavaScript  
 - **Backend:** FastAPI (Python)  
 - **Database:** MySQL  
-- **Deployment:** Vercel (Frontend), Railway/Render (Backend)  
+- **Deployment:** Vercel (Frontend), Clever Cloud/Render (Backend)  
 
 ---
 
