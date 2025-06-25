@@ -3,7 +3,10 @@
 A fully functional **Inventory Management System** built with **HTML, CSS, JavaScript, FastAPI, and MySQL**. This web application allows users to **add, update, search, and manage inventory data** efficiently.
 
 
-For Login, use the credentials: Username - admin Password - adminpass
+For Login, use the credentials: 
+Username 1 - admin Password - adminpass 
+Username 2 - manager Password - managerpass
+Username 3 - employee Password - employeepass
 =
 ---
 
