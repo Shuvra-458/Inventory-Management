@@ -1,0 +1,62 @@
+# Python cache and virtual environments
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+.env
+.venv/
+venv/
+ENV/
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+*.log
+
+# dotenv environment files
+.env
+.env.*
+
+# VSCode or PyCharm IDE configs
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Render deploy build artifacts
+*.sqlite3
+*.db
+
+# Node / Frontend
+node_modules/
+.next/
+out/
+.vercel/
+
+# Vercel CLI
+.vercel/
+
+# Optional: ignore test coverage if you generate it
+htmlcov/
+coverage.*
+*.cover
+.pytest_cache/
+
+# Optional: production builds
+*.tar.gz
+*.zip
+*.whl
